@@ -1,0 +1,32 @@
+.info__title {
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+    grid-area: title;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@media (min-width: 320px) {
+    .info__title {
+        font-size: 27px;
+        line-height: 33px;
+        text-align: center;
+        margin-top: 22.25px;
+        margin-right: 10px;
+        max-width: 189px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .info__title {
+        font-size: 42px;
+        line-height: 48px;
+        text-align: left;
+        margin-right: 18px;
+        align-self: end;
+        max-width: 294px;
+    }
+}

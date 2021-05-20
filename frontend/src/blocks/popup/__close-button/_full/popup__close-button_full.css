@@ -1,0 +1,14 @@
+@media (min-width: 320px) {
+    .popup__close-button_full {
+        height: 40px;
+        right: -27px;
+        top: -31px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .popup__close-button_full {
+        right: -45px;
+        top: -45px;
+    }
+}

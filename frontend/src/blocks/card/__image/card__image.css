@@ -1,0 +1,24 @@
+.card__image {
+    border-radius: 10px 10px 0px 0px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+@media (min-width: 320px) {
+    .card__image {
+        width: 282px;
+        height: 282px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card__image {
+        width: 300px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .card__image {
+        width: 282px;
+    }
+}

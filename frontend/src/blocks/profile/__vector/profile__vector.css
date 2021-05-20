@@ -1,0 +1,5 @@
+@media (min-width: 320px) {
+    .profile__vector {
+        min-height: 16px;
+    }
+}

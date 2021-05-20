@@ -1,0 +1,20 @@
+.authorization__input {
+  background-color: #000000;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0;
+  border: 0;
+  border-bottom: 2px solid #cccccc;
+  color: hsl(0, 0%, 80%);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+@media (max-width: 320px) {
+  .authorization__input {
+    width: 260px;
+    margin: 0 auto 30px;
+  }
+}

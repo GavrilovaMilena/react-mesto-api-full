@@ -1,0 +1,5 @@
+@media (max-width: 320px) {
+    .popup__close-button_reg {
+        right: calc(50% - 13px);
+    }
+}

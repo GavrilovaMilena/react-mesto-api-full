@@ -1,0 +1,31 @@
+.info__subtitle {
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    grid-area: subtitle;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+@media (min-width: 320px) {
+    .info__subtitle {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        margin-top: 14px;
+        justify-self: center;
+        max-width: 282px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .info__subtitle {
+        font-size: 18px;
+        line-height: 22px;
+        text-align: left;
+        margin-top: 16px;
+        justify-self: left;
+        max-width: 336px;
+    }
+}

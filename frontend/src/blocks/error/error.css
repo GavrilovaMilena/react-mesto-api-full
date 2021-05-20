@@ -1,0 +1,26 @@
+.error {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-top: 5px;
+    margin-left: 36px;
+    max-width: 164px;
+    min-height: 12px;
+}
+
+@media (min-width: 320px) {
+    .error {
+        margin-top: 5px;
+        margin-left: 21px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .error {
+        margin-top: 5px;
+        margin-left: 36px;
+    }
+}

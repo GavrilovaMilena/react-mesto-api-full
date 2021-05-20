@@ -1,0 +1,10 @@
+.info {
+    display: grid;
+}
+
+@media (min-width: 320px) {
+    .info {
+        grid-template-areas: "title button" "subtitle subtitle";
+        margin: auto;
+    }
+}

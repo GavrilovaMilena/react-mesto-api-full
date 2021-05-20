@@ -1,0 +1,38 @@
+.cards {
+    margin: auto;
+    display: grid;
+}
+
+@media (min-width: 320px) {
+    .cards {
+        margin-top: 36px;
+        max-width: 282px;
+        grid-template-columns: repeat(1, 361px);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .cards {
+        max-width: 593px;
+        grid-template-columns: repeat(2, 310px);
+        gap: 23px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards {
+        max-width: 631px;
+        grid-template-columns: repeat(2, 310px);
+        gap: 25px 25px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .cards {
+        max-width: 880px;
+        grid-template-columns: repeat(3, 284px);
+        gap: 17px;
+        margin-top: 47.25px;
+    }
+}

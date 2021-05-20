@@ -1,0 +1,24 @@
+.card {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    position: relative;
+}
+
+@media (min-width: 320px) {
+    .card {
+        max-width: 282px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .card {
+        max-width: 282px;
+    }
+}

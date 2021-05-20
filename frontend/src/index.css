@@ -1,0 +1,84 @@
+@import url(./vendor/normalize.css);
+@import url(./fonts/fonts.css);
+
+@import url(./blocks/body/body.css);
+@import url(./blocks/page/page.css);
+
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__wrapper/header__wrapper.css);
+@import url(./blocks/header/__email/header__email.css);
+@import url(./blocks/header/__link/header__link.css);
+@import url(./blocks/header/__link/_out/header__link_out.css);
+
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__add-button/profile__add-button.css);
+@import url(./blocks/profile/__vector/profile__vector.css);
+@import url(./blocks/profile/__avatar-container/profile__avatar-container.css);
+@import url(./blocks/profile/__avatar-button/profile__avatar-button.css);
+
+@import url(./blocks/info/info.css);
+@import url(./blocks/info/__title/info__title.css);
+@import url(./blocks/info/__subtitle/info__subtitle.css);
+@import url(./blocks/info/__button/info__button.css);
+
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/card/card.css);
+@import url(./blocks/card/__image/card__image.css);
+@import url(./blocks/card/__text/card__text.css);
+@import url(./blocks/card/__group/card__group.css);
+@import url(./blocks/card/__like/card__like.css);
+@import url(./blocks/card/__delete/card__delete.css);
+@import url(./blocks/card/__like/_active/card__like_active.css);
+@import url(./blocks/card/__like-counter/card__like-counter.css);
+@import url(./blocks/card/__delete/_visible/card__delete_visible.css);
+@import url(./blocks/card/__delete/_hidden/card__delete_hidden.css);
+
+
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__copyright/footer__copyright.css);
+
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_profile/popup_profile.css);
+@import url(./blocks/popup/__window/popup__window.css);
+@import url(./blocks/popup/__close-button/popup__close-button.css);
+@import url(./blocks/popup/__close-button/_reg/popup__close-button_reg.css);
+@import url(./blocks/popup/__title/popup__title.css);
+@import url(./blocks/popup/__form/popup__form.css);
+@import url(./blocks/popup/__input/popup__input.css);
+@import url(./blocks/popup/__button/popup__button.css);
+@import url(./blocks/popup/__close-button/_card/popup__close-button_card.css);
+@import url(./blocks/popup/_card/popup_card.css);
+@import url(./blocks/popup/__button/_card/popup__button_card.css);
+@import url(./blocks/popup/__form/_card/popup__form_card.css);
+@import url(./blocks/popup/__input/_card/popup__input_card.css);
+@import url(./blocks/popup/__full-group/popup__full-group.css);
+@import url(./blocks/popup/__window/_avatar/popup__window_avatar.css);
+
+@import url(./blocks/popup/_full/popup_full.css);
+@import url(./blocks/popup/__close-button/_full/popup__close-button_full.css);
+@import url(./blocks/popup/__full-image/popup__full-image.css);
+@import url(./blocks/popup/__full-text/popup__full-text.css);
+
+@import url(./blocks/popup/__window/_delete-card/popup__window_delete-card.css);
+@import url(./blocks/popup/__window/_reg/popup__window_reg.css);
+@import url(./blocks/popup/__button/_delete-card/popup__button_delete-card.css);
+
+@import url(./blocks/popup/__image/popup__image.css);
+@import url(./blocks/popup/__register-text/popup__register-text.css);
+
+@import url(./blocks/authorization/authorization.css);
+@import url(./blocks/authorization/__form/authorization__form.css);
+@import url(./blocks/authorization/__title/authorization__title.css);
+@import url(./blocks/authorization/__text/authorization__text.css);
+@import url(./blocks/authorization/__input/authorization__input.css);
+@import url(./blocks/authorization/__button/authorization__button.css);
+
+@import url(./blocks/popup/__input/_state-invalid/popup__input_state-invalid.css);
+
+@import url(./blocks/error/error.css);
+
+@import url(./blocks/popup/__button/_invalid/popup__button_invalid.css);
+
+@import url(./blocks/popup/_visible/popup_visible.css);

@@ -1,0 +1,7 @@
+@media (max-width: 320px) {
+  .popup__window_reg {
+    max-width: 280px;
+    min-height: 308px;
+    top: 66.79px;
+  }
+}
