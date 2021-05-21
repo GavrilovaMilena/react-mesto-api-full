@@ -13,7 +13,7 @@ usersRouter.get(
   '/:_id',
   celebrate({
     body: Joi.object().keys({
-      id: Joi.string().required().length(24).hex(),
+      _id: Joi.string().required().length(24).hex(),
     }),
   }),
   getUser,
@@ -22,8 +22,8 @@ usersRouter.patch(
   '/me',
   celebrate({
     body: Joi.object().keys({
-      name: Joi.string().required().min(2).max(24),
-      about: Joi.string().required().min(2).max(24),
+      name: Joi.string().required().min(2).max(30),
+      about: Joi.string().required().min(2).max(30),
     }),
   }),
   updateUser,

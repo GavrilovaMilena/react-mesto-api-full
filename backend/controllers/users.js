@@ -97,9 +97,9 @@ module.exports.createUser = (req, res, next) => {
 };
 
 module.exports.getUser = (req, res, next) => {
-  User.findById(req.params._id)
+  User.findById(req.user._id)
     .orFail(() => {
-      const error = new Error('CastError');
+      const error = new Error('Пользователь не найден');
       error.statusCode = 404;
       throw error;
     })
@@ -119,7 +119,7 @@ module.exports.getUsers = (req, res, next) => {
     .catch(next);
 };
 
-module.exports.login = (req, res) => {
+module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
@@ -128,5 +128,7 @@ module.exports.login = (req, res) => {
       });
       res.send({ token });
     })
-    .catch(() => res.status(401).send({ message: 'Необходима авторизация' }));
+    .catch((err) => {
+      next(err);
+    });
 };

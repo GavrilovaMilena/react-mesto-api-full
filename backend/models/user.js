@@ -17,6 +17,12 @@ const userSchema = new mongoose.Schema({
   },
   avatar: {
     type: String,
+    validate: {
+      validator(v) {
+        const regex = /(https?:\/\/)([\da-zA-Z\-.]+)([\da-zA-Z-._~:/?#[\]@!$&'()*+,;=]+)/;
+        return regex.test(v);
+      },
+    },
     default:
       'http://pm1.narvii.com/6878/7590f2750286a5952f65d5a0ebebc8f328b8163br1-720-901v2_00.jpg',
   },
@@ -25,7 +31,9 @@ const userSchema = new mongoose.Schema({
     unique: true,
     required: true,
     validate: {
-      validator: (value) => validator.isEmail(value),
+      validator(v) {
+        return validator.isEmail(v);
+      },
     },
   },
   password: {
@@ -37,7 +45,7 @@ const userSchema = new mongoose.Schema({
 
 // добавим метод findUserByCredentials схеме пользователя
 // у него будет два параметра — почта и пароль
-function findUserByCredentials(email, password) {
+userSchema.statics.findUserByCredentials = function (email, password) {
   // попытаемся найти пользовател по почте
   return this.findOne({ email }) // this — это модель User
     .select('+password')
@@ -55,7 +63,6 @@ function findUserByCredentials(email, password) {
         return user; // теперь user доступен
       });
     });
-}
-userSchema.statics.findUserByCredentials = findUserByCredentials;
+};
 
 module.exports = mongoose.model('user', userSchema);
