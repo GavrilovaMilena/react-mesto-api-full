@@ -71,26 +71,21 @@ module.exports.createCard = (req, res, next) => {
 };
 
 module.exports.deleteCard = (req, res, next) => {
-  Card.findByIdAndRemove(req.params._id)
-    .orFail(() => {
-      const error = new Error('CastError');
-      error.statusCode = 404;
-      throw error;
-    })
+  const owner = req.user._id;
+  Card
+    .findOne({ _id: req.params.cardId })
+    .orFail(() => new NotFoundError('Карточка не найдена'))
     .then((card) => {
-      if (!card) {
-        next(new NotFoundError('Карточка не найдена'));
-      } else if (!card.owner.equals(req.user._id)) {
-        next(new ForbiddenError('Невозможно удалить чужую карточку'));
+      if (!card.owner.equals(owner)) {
+        next(new ForbiddenError('Нет прав на удаление этой карточки'));
       } else {
         Card.deleteOne(card)
-          .then((result) => res.send(result))
-          .catch(next);
+          .then(() => res.status(200).send({ message: 'Карточка удалена' }));
       }
     })
     .catch((err) => {
-      if (err.name === 'CastError') {
-        next(new BadRequestError('Данные некорректны'));
+      if (err.kind === 'ObjectId') {
+        next(new ValidationError('Невалидный id карточки'));
       } else {
         next(err);
       }

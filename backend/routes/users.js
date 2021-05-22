@@ -12,7 +12,7 @@ usersRouter.get('/', getUsers);
 usersRouter.get(
   '/:_id',
   celebrate({
-    body: Joi.object().keys({
+    params: Joi.object().keys({
       _id: Joi.string().required().length(24).hex(),
     }),
   }),

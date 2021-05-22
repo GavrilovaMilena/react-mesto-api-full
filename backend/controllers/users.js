@@ -4,6 +4,7 @@ const User = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
+const AuthError = require('../errors/AuthError');
 
 module.exports.updateUser = (req, res, next) => {
   const { name, about } = req.body;
@@ -97,7 +98,7 @@ module.exports.createUser = (req, res, next) => {
 };
 
 module.exports.getUser = (req, res, next) => {
-  User.findById(req.user._id)
+  User.findById(req.params._id)
     .orFail(() => {
       const error = new Error('Пользователь не найден');
       error.statusCode = 404;
@@ -128,7 +129,8 @@ module.exports.login = (req, res, next) => {
       });
       res.send({ token });
     })
-    .catch((err) => {
-      next(err);
-    });
+    .catch(() => {
+      throw new AuthError('Необходима авторизация');
+    })
+    .catch(next);
 };
