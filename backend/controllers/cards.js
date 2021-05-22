@@ -73,7 +73,7 @@ module.exports.createCard = (req, res, next) => {
 module.exports.deleteCard = (req, res, next) => {
   const owner = req.user._id;
   Card
-    .findOne({ _id: req.params.cardId })
+    .findOne({ _id: req.params._id })
     .orFail(() => new NotFoundError('Карточка не найдена'))
     .then((card) => {
       if (!card.owner.equals(owner)) {
@@ -84,8 +84,8 @@ module.exports.deleteCard = (req, res, next) => {
       }
     })
     .catch((err) => {
-      if (err.kind === 'ObjectId') {
-        next(new ValidationError('Невалидный id карточки'));
+      if (err.name === 'CastError') {
+        next(new BadRequestError('Данные некорректны'));
       } else {
         next(err);
       }
