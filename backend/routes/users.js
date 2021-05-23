@@ -45,4 +45,3 @@ usersRouter.patch(
 );
 
 module.exports = usersRouter;
-
