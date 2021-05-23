@@ -134,3 +134,20 @@ module.exports.login = (req, res, next) => {
     })
     .catch(next);
 };
+
+module.exports.getMyProfile = (req, res, next) => {
+  User.findById(req.user._id)
+    .orFail(() => {
+      const error = new Error('Пользователь не найден');
+      error.statusCode = 404;
+      throw error;
+    })
+    .then((user) => {
+      if (!user) {
+        next(new NotFoundError('Пользователь не найден'));
+      } else {
+        res.send(user);
+      }
+    })
+    .catch(next);
+};

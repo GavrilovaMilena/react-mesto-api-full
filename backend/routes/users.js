@@ -6,9 +6,11 @@ const {
   getUser,
   updateUser,
   updateAvatar,
+  getMyProfile,
 } = require('../controllers/users');
 
 usersRouter.get('/', getUsers);
+usersRouter.get('/me', getMyProfile);
 usersRouter.get(
   '/:_id',
   celebrate({
@@ -43,3 +45,4 @@ usersRouter.patch(
 );
 
 module.exports = usersRouter;
+

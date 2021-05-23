@@ -33,7 +33,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger); // подключаем логгер запросов
-app.use(cors());
 
 // Подключение роутов и обработка несуществующих роутов
 app.post(
